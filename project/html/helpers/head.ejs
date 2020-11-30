@@ -10,9 +10,11 @@
 <!-- Google font CSS -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
 
+<!-- Use API Key saved in server-->
+<script> var apikey="<%= process.env.API_KEY %>"</script>
+
 <!-- this app's own css -->
 <link rel="stylesheet" type="text/css" href="css/main.css"/>
-
 
 
 <!-- Next import js files -->
@@ -20,8 +22,37 @@
 <!-- first we import jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+<!-- then popper.min.js for dropdown -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+
 <!-- then bootstrap -->
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "<%= process.env.FIREBASE_API_KEY %>",
+    authDomain: "message-stream-6f5a8.firebaseapp.com",
+    databaseURL: "https://message-stream-6f5a8.firebaseio.com",
+    projectId: "message-stream-6f5a8",
+    storageBucket: "message-stream-6f5a8.appspot.com",
+    messagingSenderId: "711271864274",
+    appId: "1:711271864274:web:3b0f89a8d64dadde479a0b",
+    measurementId: "G-Y2DKTQLL5L"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 
 <!-- then our app's own js file -->
 <script src="js/main.js"></script>
